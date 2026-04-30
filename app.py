@@ -3,16 +3,14 @@ import psycopg2
 import os
 
 # Database connection settings
-db_host = os.getenv("DB_HOST", "db")
+db_host = os.getenv("DB_HOST")
 db_port = os.getenv("DB_PORT", "5432")
-db_name = os.getenv("POSTGRES_DB", "products")
-db_user = os.getenv("POSTGRES_USER", "postgres")
-db_pass = os.getenv("POSTGRES_PASSWORD", "postgres")
+db_name = os.getenv("POSTGRES_DB")
+db_user = os.getenv("POSTGRES_USER")
+db_pass = os.getenv("POSTGRES_PASSWORD")
 
 # New line to vegetable database
 new_vegetable = ("Parsnips", "Fresh", 2.42, 2.19)
-
-
 
 try:
     # Connect PostgreSQL database

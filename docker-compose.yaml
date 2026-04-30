@@ -1,7 +1,7 @@
 services:
   app:
-    #build: . # Actively developing and want Compose to rebuild the image each time
-    image: et-app:v2 # Force Docker Compose to use the tagged image instead of creating a new one (build)
+    build: . # Actively developing and want Compose to rebuild the image each time
+    #image: etl-app:v2 # Force Docker Compose to use the tagged image instead of creating a new one (build)
     depends_on:
       db:
         condition: service_healthy
@@ -18,7 +18,7 @@ services:
       timeout: 2s
       retries: 5
       start_period: 30s
-    container_name: local_pg
+    container_name: local_pg2
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
